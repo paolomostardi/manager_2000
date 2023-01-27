@@ -1,6 +1,14 @@
+
+
+
 import csv
 import subprocess
+import sys
 
+
+sys.path.insert(1, 'Desktop/coding projects/manager_2000/scripts')
+
+import sleep_schedule 
 
 def productivity_tracker():
     return
@@ -13,18 +21,18 @@ def dictionary():
 
 
 while True:
-    print('choose a thing')
+    print('Choose a thing')
     print('1 - insert sleep cycle')
     print('2 - calculate food program')
     print('3 - productivity tracker')
-    print('exit - get out')
+    print('4 - close')
 
     choice = input()
 
-    if choice == 'exit':
+    if choice == '4':
         break
     elif choice == '1':  # sleep cycle
-        insert_sleep_cycle()
+        sleep_schedule.sleep_manager()
 
     elif choice == '2':  # calculate food program
         insert_sleep_cycle()
