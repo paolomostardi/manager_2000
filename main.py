@@ -19,7 +19,9 @@ def dictionary():
 
 
 while True:
-    print('Choose a thing')
+    print()
+    print('Choose a thing :')
+    print()
     print('1 - Sleep manager')
     print('2 - Diet manager')
     print('3 - Task manager')

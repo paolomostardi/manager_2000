@@ -1,5 +1,6 @@
 
 from datetime import date
+import pandas as pd
 import csv 
 
 
@@ -23,10 +24,10 @@ def get_user_input_sleep_cycle():
     
     total_time = calculate_time_difference(bed_time,waking_up_time)
     
-    print('Insert date if not today (yyyy/dd/mm)')
+    print('Insert date if not today (yyyy-dd-mm)')
     sleep_date = input()
     
-    if sleep_date is '' :
+    if sleep_date == '' :
         sleep_date = date.today()
         
     return bed_time,waking_up_time,sleep_date,total_time
@@ -43,15 +44,19 @@ def insert_sleep_cycle_to_dataset(sleep_schedule):
 def insert_sleep_cycle():
 
     user_data = get_user_input_sleep_cycle()
-    print(user_data)
     insert_sleep_cycle_to_dataset(user_data)
+    print(' Data successfully inserted : ' + str(user_data) )
+    
     
 def view_sleep_cycle():
-    return 
+
+    filename = "csv_files/sleep_schedule.csv"
+    df = pd.read_csv(filename)
+    print(df)
     
     
 def sleep_menu():
-
+    print()
     print('Choose an option')
     print('1 - Insert sleep cycle')
     print('2 - View sleep cycle')
