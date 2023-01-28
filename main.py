@@ -4,11 +4,9 @@
 import csv
 import subprocess
 import sys
+from managers import sleep_manager
 
 
-sys.path.insert(1, 'Desktop/coding projects/manager_2000/scripts')
-
-import sleep_schedule 
 
 def productivity_tracker():
     return
@@ -22,23 +20,25 @@ def dictionary():
 
 while True:
     print('Choose a thing')
-    print('1 - insert sleep cycle')
-    print('2 - calculate food program')
-    print('3 - productivity tracker')
-    print('4 - close')
+    print('1 - Sleep manager')
+    print('2 - Diet manager')
+    print('3 - Task manager')
+    print('4 - Dictionary')
+    print('5 - close')
 
     choice = input()
 
-    if choice == '4':
-        break
-    elif choice == '1':  # sleep cycle
-        sleep_schedule.sleep_manager()
+    if choice == '1':
+        sleep_manager.sleep_manager()
 
-    elif choice == '2':  # calculate food program
+    elif choice == '2':  
         insert_sleep_cycle()
 
-    elif choice == '3':  # productivity tracker
+    elif choice == '3':  
         productivity_tracker()
 
-    elif choice == '4':  # dictionary
+    elif choice == '4': 
         dictionary()
+        
+    elif choice == '5': 
+        break
